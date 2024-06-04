@@ -5,29 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Música Tradicional en Santa Cruz</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        #matrix {
-            font-family: monospace;
-            font-size: 18px;
-            color: #00FF00; /* Color verde para el efecto Matrix */
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            overflow: hidden;
-            background-color: black;
-            white-space: nowrap;
-            pointer-events: none; /* Evita que los caracteres afecten a la interacción del usuario */
-        }
-    </style>
 </head>
 <body>
     <header>
         <h1>Música Tradicional en Santa Cruz de la Sierra</h1>
     </header>
     <main>
-        <div id="matrix"></div> <!-- Div para el efecto Matrix -->
+        <div id="map">
+            <div id="matrix-effect"></div>
+            <img src="img/logo-santa-cruz-ni-te-imaginas.jpg" alt="Santa Cruz - Ni te imaginas" style="max-width: 100%; display: block; margin: 0 auto;">
+        </div>
         <div id="locations">
             <h2>Locales</h2>
             <ul id="location-list"></ul>
@@ -37,31 +24,5 @@
         <p>&copy; 2024 Música Tradicional en Santa Cruz</p>
     </footer>
     <script src="script.js"></script>
-    <script>
-        const matrixContainer = document.getElementById('matrix');
-
-        // Función para generar un carácter aleatorio (0 o 1)
-        function randomCharacter() {
-            return Math.random() < 0.5 ? '0' : '1';
-        }
-
-        // Función para generar una cadena de caracteres aleatorios (0s y 1s)
-        function randomLine(length) {
-            return Array.from({ length }, randomCharacter).join('');
-        }
-
-        // Función para actualizar el efecto Matrix
-        function updateMatrix() {
-            const windowHeight = window.innerHeight;
-            const windowWidth = window.innerWidth;
-            const numColumns = Math.ceil(windowWidth / 10); // Ancho de cada carácter aproximadamente 10px
-            const numRows = Math.ceil(windowHeight / 20); // Alto de cada carácter aproximadamente 20px
-            const matrixText = Array.from({ length: numRows }, () => randomLine(numColumns)).join('<br>');
-            matrixContainer.innerHTML = matrixText;
-        }
-
-        // Actualizar el efecto Matrix cada 100ms
-        setInterval(updateMatrix, 100);
-    </script>
 </body>
 </html>
