@@ -17,31 +17,3 @@ function initializeMap(locations) {
         locationList.appendChild(listItem);
     });
 }
-// Matrix effect
-const matrixEffectContainer = document.getElementById('matrix-effect');
-
-function generateRandomBinary() {
-    return Math.floor(Math.random() * 2);
-}
-
-function generateMatrixLine() {
-    const line = [];
-    for (let i = 0; i < 50; i++) {
-        line.push(generateRandomBinary());
-    }
-    return line.join('');
-}
-
-function generateMatrixEffect() {
-    const lines = [];
-    for (let i = 0; i < 30; i++) {
-        lines.push(generateMatrixLine());
-    }
-    return lines.join('<br>');
-}
-
-function updateMatrixEffect() {
-    matrixEffectContainer.innerHTML = generateMatrixEffect();
-}
-
-setInterval(updateMatrixEffect, 100);
