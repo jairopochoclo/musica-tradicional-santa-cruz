@@ -3,7 +3,7 @@ const canvas = document.getElementById('matrix-canvas');
 const ctx = canvas.getContext('2d');
 
 // Ajustar tamaño del lienzo al tamaño deseado
-canvas.width = 630; // Cambiar este valor al ancho deseado
+canvas.width = 1020; // Cambiar este valor al ancho deseado
 canvas.height = 500; // Cambiar este valor al alto deseado
 
 // Caracteres que se mostrarán en el efecto Matrix
