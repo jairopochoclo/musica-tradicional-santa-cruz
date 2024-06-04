@@ -2,16 +2,16 @@
 const canvas = document.getElementById('matrix-canvas');
 const ctx = canvas.getContext('2d');
 
-// Ajustar tamaño del lienzo al tamaño de la ventana
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+// Ajustar tamaño del lienzo al tamaño deseado
+canvas.width = 400; // Cambiar este valor al ancho deseado
+canvas.height = 200; // Cambiar este valor al alto deseado
 
 // Caracteres que se mostrarán en el efecto Matrix
 const matrixChars = '01';
 const charsArray = matrixChars.split('');
 
-// Tamaño y distancia entre los caracteres
-const fontSize = 16;
+// Tamaño y distancia entre los caracteres (ajustado para la nueva ventana)
+const fontSize = 8; // Reducir el tamaño de la fuente
 const columns = canvas.width / fontSize;
 const drops = [];
 for (let i = 0; i < columns; i++) {
